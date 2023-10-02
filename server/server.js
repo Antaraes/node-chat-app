@@ -24,6 +24,9 @@ io.on("connection", (socket) => {
 
 app.use(express.static("client"));
 const port = process.env.PORT || 4000;
+app.get("/", (req, res) => {
+  res.render("index.html");
+});
 server.listen(port, () => {
   console.log("Server is up on " + port);
 });
